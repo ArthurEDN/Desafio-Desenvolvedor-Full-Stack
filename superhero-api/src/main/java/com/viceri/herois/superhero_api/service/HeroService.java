@@ -108,8 +108,6 @@ public class HeroService {
                 .altura(hero.getAltura())
                 .peso(hero.getPeso())
                 .superpoderes(superpowerDTOs)
-                .createdAt(hero.getCreatedAt())
-                .updatedAt(hero.getUpdatedAt())
                 .build();
     }
 }

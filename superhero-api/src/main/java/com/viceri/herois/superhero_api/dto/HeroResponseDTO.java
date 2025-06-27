@@ -22,6 +22,4 @@ public class HeroResponseDTO {
     private Double altura;
     private Double peso;
     private List<SuperpowerDTO> superpoderes;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }

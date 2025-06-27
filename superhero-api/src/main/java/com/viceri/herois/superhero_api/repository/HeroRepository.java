@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -59,8 +58,9 @@ public class HeroRepository {
 
     public Optional<Hero> findById(Long id) {
         String sql = "SELECT * FROM herois WHERE id = ?";
+
         try {
-            Hero hero = jdbcTemplate.queryForObject(sql, this::mapRowToHero, id);
+           Hero hero = jdbcTemplate.queryForObject(sql, this::mapRowToHero, id);
             if (hero != null) {
                 hero.setSuperpoderes(findSuperpowersByHeroId(id));
             }
@@ -97,10 +97,9 @@ public class HeroRepository {
     }
 
     private Hero insert(Hero hero) {
-        String sql = "INSERT INTO herois (nome, nome_heroi, data_nascimento, altura, peso, created_at, updated_at) " +
-                "VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO herois (nome, nome_heroi, data_nascimento, altura, peso) " +
+                "VALUES (?, ?, ?, ?, ?)";
 
-        LocalDateTime now = LocalDateTime.now();
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         jdbcTemplate.update(connection -> {
@@ -110,28 +109,22 @@ public class HeroRepository {
             ps.setDate(3, java.sql.Date.valueOf(hero.getDataNascimento()));
             ps.setDouble(4, hero.getAltura());
             ps.setDouble(5, hero.getPeso());
-            ps.setTimestamp(6, Timestamp.valueOf(now));
-            ps.setTimestamp(7, Timestamp.valueOf(now));
             return ps;
         }, keyHolder);
 
-        Number key = keyHolder.getKey();
-        if (key == null) {
-            throw new IllegalStateException("Erro ao obter o ID do novo herói.");
-        }
-        long newId = key.longValue();
-        hero.setId(newId);
-        hero.setCreatedAt(now);
-        hero.setUpdatedAt(now);
-
-        saveHeroSuperpowers(newId, hero.getSuperpoderes());
+        if (keyHolder.getKeys() != null && keyHolder.getKeys().containsKey("id")) {
+            long newId = ((Number) keyHolder.getKeys().get("id")).longValue();
+            hero.setId(newId);
+            saveHeroSuperpowers(newId, hero.getSuperpoderes());
+        } else {
+            throw new IllegalStateException("Could not retrieve generated ID for hero.");
+        };
 
         return hero;
     }
 
     private Hero update(Hero hero) {
-        String sql = "UPDATE herois SET nome = ?, nome_heroi = ?, data_nascimento = ?, altura = ?, peso = ?, updated_at = ? WHERE id = ?";
-        LocalDateTime now = LocalDateTime.now();
+        String sql = "UPDATE herois SET nome = ?, nome_heroi = ?, data_nascimento = ?, altura = ?, peso = ? WHERE id = ?";
 
         jdbcTemplate.update(sql,
                 hero.getNome(),
@@ -139,10 +132,7 @@ public class HeroRepository {
                 hero.getDataNascimento(),
                 hero.getAltura(),
                 hero.getPeso(),
-                now,
                 hero.getId());
-
-        hero.setUpdatedAt(now);
 
         deleteHeroSuperpowers(hero.getId());
         saveHeroSuperpowers(hero.getId(), hero.getSuperpoderes());
@@ -194,10 +184,8 @@ public class HeroRepository {
                 .nome(rs.getString("nome"))
                 .nomeHeroi(rs.getString("nome_heroi"))
                 .dataNascimento(rs.getObject("data_nascimento", LocalDate.class))
-                .altura(rs.getDouble("altura"))
-                .peso(rs.getDouble("peso"))
-                .createdAt(rs.getObject("created_at", LocalDateTime.class))
-                .updatedAt(rs.getObject("updated_at", LocalDateTime.class))
+                .altura(rs.getBigDecimal("altura").doubleValue())
+                .peso(rs.getBigDecimal("peso").doubleValue())
                 .build();
     }
 }

@@ -20,6 +20,4 @@ public class Hero {
     private Double altura;
     private Double peso;
     private List<Superpower> superpoderes;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 }
