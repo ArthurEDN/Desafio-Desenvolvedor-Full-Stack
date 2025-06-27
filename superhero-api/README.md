@@ -49,7 +49,7 @@ A Superhero API é uma aplicação que permite o gerenciamento completo de super
 - ✅ Tratamento de Exceções
 - ✅ Migrações de Banco
 - ✅ CORS Configurado
-- ✅ Auditoria (created_at, updated_at)
+
 
 ## 📋 Pré-requisitos
 
@@ -75,7 +75,6 @@ DB_URL=jdbc:postgresql://localhost:5432/heroes_db
 DB_USERNAME=postgres
 DB_PASSWORD=123456
 SERVER_PORT=9090
-CORS_ALLOWED_ORIGINS=http://localhost:4200
 ```
 
 ### 3. Execute as migrações
