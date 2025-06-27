@@ -1,0 +1,96 @@
+# === JAVA/SPRING BOOT ===
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# === ANGULAR/NODE.JS ===
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production builds
+/frontend/dist/
+/frontend/build/
+
+# Angular specific
+.angular/
+.ng_build/
+.ng_pkg_build/
+
+# TypeScript
+*.tsbuildinfo
+
+# === ENVIRONMENT VARIABLES ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+application-dev.properties
+application-prod.properties
+
+# === DATABASE ===
+*.db
+*.sqlite
+*.sqlite3
+h2/
+
+# === LOGS ===
+*.log
+logs/
+
+# === OS SPECIFIC ===
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# === BACKUP FILES ===
+*.bak
+*.backup
+*.swp
+*.swo
+*~
+
+# === COVERAGE REPORTS ===
+coverage/
+*.lcov
+.nyc_output/
+
+# === DOCKER ===
+.dockerignore
