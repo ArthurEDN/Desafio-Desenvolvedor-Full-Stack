@@ -15,24 +15,24 @@ import java.util.List;
 
 public class HeroRequestDTO {
 
-    @NotBlank(message = "O campo 'nome' não pode ser vazio.")
-    @Size(max = 120, message = "O nome deve ter no máximo 120 caracteres.")
+    @NotBlank(message = "Nome é obrigatório")
+    @Size(max = 120, message = "O nome deve ter no máximo 120 caracteres")
     private String nome;
 
-    @NotBlank(message = "O campo 'nomeHeroi' não pode ser vazio.")
+    @NotBlank(message = "Nome do herói é obrigatório")
     @Size(max = 120, message = "O nome do herói deve ter no máximo 120 caracteres.")
     private String nomeHeroi;
 
-    @NotNull(message = "O campo 'dataNascimento' é obrigatório.")
+    @NotNull(message = "Data de nascimento é obrigatório.")
     @Past(message = "A data de nascimento deve ser no passado.")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataNascimento;
 
-    @NotNull(message = "O campo 'altura' é obrigatório.")
+    @NotNull(message = "Altura é obrigatório.")
     @Positive(message = "A altura deve ser um valor positivo.")
     private Double altura;
 
-    @NotNull(message = "O campo 'peso' é obrigatório.")
+    @NotNull(message = "Peso é obrigatório.")
     @Positive(message = "O peso deve ser um valor positivo.")
     private Double peso;
 

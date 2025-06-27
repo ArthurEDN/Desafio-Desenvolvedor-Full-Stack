@@ -1,0 +1,16 @@
+INSERT INTO superpoderes (superpoder, descricao) VALUES
+('Super Força', 'Capacidade de exercer força física muito além do normal.'),
+('Voo', 'Capacidade de voar e se mover pelo ar.'),
+('Invisibilidade', 'Capacidade de se tornar invisível aos olhos.'),
+('Telepatia', 'Capacidade de ler e comunicar através da mente.'),
+('Teletransporte', 'Capacidade de se mover instantaneamente entre locais.'),
+('Super Velocidade', 'Capacidade de se mover em velocidades sobre-humanas.'),
+('Regeneração', 'Capacidade de curar ferimentos rapidamente.'),
+('Controle do Tempo', 'Capacidade de manipular o fluxo temporal.'),
+('Visão de Raio-X', 'Capacidade de enxergar através de objetos sólidos.'),
+('Controle Mental', 'Capacidade de controlar as ações de outras pessoas.'),
+('Elasticidade', 'Capacidade de esticar e moldar o corpo.'),
+('Clonagem', 'Capacidade de criar cópias de si mesmo.'),
+('Controle Elemental', 'Capacidade de manipular elementos da natureza.'),
+('Precognição', 'Capacidade de ver eventos futuros.'),
+('Força Psíquica', 'Capacidade de mover objetos com a mente.');
