@@ -14,12 +14,12 @@ import java.util.List;
 @Builder
 public class Hero {
     private Long id;
-    private String name;
-    private String heroName;
-    private LocalDate birthDate;
-    private Double height;
-    private Double weight;
-    private List<Superpower> superpowers;
+    private String nome;
+    private String nomeHeroi;
+    private LocalDate dataNascimento;
+    private Double altura;
+    private Double peso;
+    private List<Superpower> superpoderes;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 }

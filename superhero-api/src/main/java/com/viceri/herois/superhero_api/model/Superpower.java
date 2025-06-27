@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Superpower {
     private Long id;
-    private String name;
-    private String description;
+    private String superpoder;
+    private String descricao;
 }
