@@ -1,27 +1,27 @@
 # Projeto de Gerenciamento de Heróis (Full Stack)
 
-[cite_start]Este repositório contém o código-fonte de uma aplicação Full Stack para o gerenciamento de Super-Heróis, desenvolvida como parte do desafio da Viceri para Desenvolvedor Full Stack[cite: 1, 2, 4].
+Este repositório contém o código-fonte de uma aplicação Full Stack para o gerenciamento de Super-Heróis, desenvolvida como parte do desafio da Viceri para Desenvolvedor Full Stack.
 
-[cite_start]A aplicação é composta por uma **API RESTful** robusta desenvolvida em **Java com Spring Boot** e uma interface de usuário moderna e reativa (SPA - Single Page Application) desenvolvida em **Angular**[cite: 3, 5].
+A aplicação é composta por uma **API RESTful** robusta desenvolvida em **Java com Spring Boot** e uma interface de usuário moderna e reativa (SPA - Single Page Application) desenvolvida em **Angular**.
 
 ## ✨ Funcionalidades Principais
 
-[cite_start]A aplicação implementa todas as funcionalidades de um CRUD (Create, Read, Update, Delete) para gerenciar heróis[cite: 6, 10].
+A aplicação implementa todas as funcionalidades de um CRUD (Create, Read, Update, Delete) para gerenciar heróis.
 
 * **Backend (API):**
     * Endpoints para criar, listar, buscar por ID, atualizar e deletar heróis.
     * Listagem paginada para lidar com grandes volumes de dados.
     * Validação de dados de entrada e tratamento de erros robusto com respostas JSON claras.
-    * [cite_start]Regra de negócio para impedir a criação de heróis com nomes duplicados[cite: 15].
-    * [cite_start]Acesso a dados utilizando Spring JDBC[cite: 35].
-    * [cite_start]Gerenciamento de schema do banco de dados com Flyway[cite: 36].
-    * [cite_start]Documentação completa da API gerada automaticamente com Swagger/OpenAPI[cite: 31].
+    * Regra de negócio para impedir a criação de heróis com nomes duplicados.
+    * Acesso a dados utilizando Spring JDBC.
+    * Gerenciamento de schema do banco de dados com Flyway.
+    * Documentação completa da API gerada automaticamente com Swagger/OpenAPI.
 
 * **Frontend (Interface):**
-    * [cite_start]Interface limpa e reativa para listar, criar, editar e excluir heróis[cite: 40].
+    * Interface limpa e reativa para listar, criar, editar e excluir heróis.
     * Exibição dos heróis em formato de cards.
     * Formulário reativo com validações em tempo real.
-    * [cite_start]Comunicação com a API de backend de forma segura e eficiente[cite: 38].
+    * Comunicação com a API de backend de forma segura e eficiente.
     * Notificações de sucesso e erro para uma melhor experiência do usuário.
 
 ---
@@ -30,8 +30,8 @@
 
 | Camada  | Tecnologia/Framework/Biblioteca                  |
 | :------ | :----------------------------------------------- |
-| **Backend** | [cite_start]Java 17, Spring Boot, Spring JDBC, Maven, PostgreSQL, Flyway, Lombok, SpringDoc (Swagger) [cite: 33, 34, 35, 36] |
-| **Frontend**| [cite_start]Angular 17+, TypeScript, Componentes Standalone, Signals, Formulários Reativos, Bootstrap 5, SCSS [cite: 39] |
+| **Backend** | Java 17, Spring Boot, Spring JDBC, Maven, PostgreSQL, Flyway, Lombok, SpringDoc (Swagger) |
+| **Frontend**| Angular 17+, TypeScript, Componentes Standalone, Signals, Formulários Reativos, Bootstrap 5, SCSS |
 
 ---
 
@@ -55,7 +55,7 @@ Garanta que você tenha o seguinte instalado na sua máquina:
     ```sql
     CREATE DATABASE heroes_db;
     ```
-3.  As tabelas e os dados iniciais serão criados automaticamente pelo **Flyway** na primeira vez que o backend for iniciado[cite: 36].
+3.  As tabelas e os dados iniciais serão criados automaticamente pelo **Flyway** na primeira vez que o backend for iniciado.
 
 ### Passo 2: Executar o Backend (API)
 
@@ -87,6 +87,6 @@ Garanta que você tenha o seguinte instalado na sua máquina:
 
 Com o backend em execução, a documentação interativa da API, gerada pelo Swagger, pode ser acessada em:
 
-[cite_start][**http://localhost:9090/api/swagger-ui.html**](http://localhost:9090/api/swagger-ui.html) [cite: 31]
+[**http://localhost:9090/api/swagger-ui.html**](http://localhost:9090/api/swagger-ui.html)
 
 ---
