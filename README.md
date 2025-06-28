@@ -59,7 +59,7 @@ Garanta que você tenha o seguinte instalado na sua máquina:
 
 ### Passo 2: Executar o Backend (API)
 
-1.  Navegue até a pasta do projeto backend (ex: `heroes-api`).
+1.  Navegue até a pasta do projeto backend (ex: `superhero-api`).
 2.  Configure as credenciais do seu banco de dados no arquivo `src/main/resources/application.yml` (ou use um arquivo `.env` se preferir).
 3.  Compile e execute a aplicação com o Maven:
     ```bash
@@ -70,7 +70,7 @@ Garanta que você tenha o seguinte instalado na sua máquina:
 ### Passo 3: Executar o Frontend
 
 1.  Abra um **novo terminal**.
-2.  Navegue até a pasta do projeto frontend (ex: `heroes-frontend`).
+2.  Navegue até a pasta do projeto frontend (ex: `superhero-client`).
 3.  Instale as dependências do Node.js:
     ```bash
     npm install
@@ -87,6 +87,6 @@ Garanta que você tenha o seguinte instalado na sua máquina:
 
 Com o backend em execução, a documentação interativa da API, gerada pelo Swagger, pode ser acessada em:
 
-[cite_start][**http://localhost:8080/api/swagger-ui.html**](http://localhost:9090/api/swagger-ui.html) [cite: 31]
+[cite_start][**http://localhost:9090/api/swagger-ui.html**](http://localhost:9090/api/swagger-ui.html) [cite: 31]
 
 ---
