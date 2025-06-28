@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1><i class="fas fa-mask text-primary"></i> Super-Heróis</h1>
+    <button class="btn btn-primary" (click)="onNewHero()" [disabled]="isFormVisible()">
+      <i class="fas fa-plus"></i> Novo Herói
+    </button>
+  </div>
+
+  @if(isFormVisible()) {
+    <div class="card mb-4 shadow-lg">
+      <div class="card-header">
+        <h5>{{ selectedHero() ? 'Editar Herói' : 'Novo Herói' }}</h5>
+      </div>
+      <div class="card-body">
+        <app-hero-form 
+          [hero]="selectedHero()"
+          (formSaved)="onFormSaved()"
+          (formCancelled)="onFormCancelled()">
+        </app-hero-form>
+      </div>
+    </div>
+  }
+
+  @if (loading()) {
+    <div class="text-center py-5">
+      <div class="spinner-border"></div>
+      <p class="mt-2">Carregando heróis...</p>
+    </div>
+  }
+
+  @if (!loading() && heroes().length > 0) {
+    <div class="row">
+      @for (hero of heroes(); track hero.id) {
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 shadow-sm hero-card">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ hero.nomeHeroi }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ hero.nome }}</h6>
+              <p class="card-text small">
+                <strong>Altura:</strong> {{ hero.altura }}m | 
+                <strong>Peso:</strong> {{ hero.peso }}kg
+              </p>
+              <div class="mt-auto">
+                <div class="mb-2">
+                  @for(sp of hero.superpoderes; track sp.id) {
+                    <span class="badge bg-secondary me-1">{{ sp.superpoder }}</span>
+                  }
+                </div>
+                <div class="btn-group w-100">
+                  <button class="btn btn-sm btn-outline-primary" (click)="onEditHero(hero)">
+                    <i class="fas fa-edit"></i> Editar
+                  </button>
+                  <button class="btn btn-sm btn-outline-danger" (click)="onDeleteHero(hero)">
+                    <i class="fas fa-trash"></i> Excluir
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  @if (!loading() && heroes().length === 0) {
+    <div class="text-center py-5 mt-5">
+      <p class="h4 text-muted">Nenhum herói encontrado.</p>
+      <p class="text-muted">Clique em "Novo Herói" para começar.</p>
+    </div>
+  }
+</div>
