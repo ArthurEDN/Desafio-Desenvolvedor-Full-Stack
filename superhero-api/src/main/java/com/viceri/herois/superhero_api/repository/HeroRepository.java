@@ -31,7 +31,7 @@ public class HeroRepository {
     public Page<Hero> findAll(Pageable pageable) {
         String countSql = "SELECT COUNT(*) FROM herois";
         Integer total = jdbcTemplate.queryForObject(countSql, Integer.class);
-        List<String> allowedSortColumns = List.of("id", "nome", "nome_heroi", "created_at");
+        List<String> allowedSortColumns = List.of("id", "nome", "nome_heroi");
         String sortClause = pageable.getSort().isEmpty()
                 ? "id ASC"
                 : pageable.getSort().stream()

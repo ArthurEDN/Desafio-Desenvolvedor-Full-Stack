@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "super-heroes-crud": {
+    "superhero-client": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -22,13 +22,9 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+                "src/styles.css"
             ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -58,10 +54,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "super-heroes-crud:build:production"
+              "buildTarget": "superhero-client:build:production"
             },
             "development": {
-              "buildTarget": "super-heroes-crud:build:development"
+              "buildTarget": "superhero-client:build:development"
             }
           },
           "defaultConfiguration": "development"
